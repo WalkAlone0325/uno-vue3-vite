@@ -1,9 +1,11 @@
-import { defineConfig, presetAttributify, presetUno } from 'unocss'
+import { defineConfig, presetUno } from 'unocss'
+import presetRemToPx from '@unocss/preset-rem-to-px'
 
 export default defineConfig({
   presets: [
-    presetAttributify(),
-    presetUno()
-  ],
-  rules: []
+    presetUno(),
+    presetRemToPx({
+      baseFontSize: 30
+    })
+  ]
 })

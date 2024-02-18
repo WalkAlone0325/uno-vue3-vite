@@ -1,15 +1,26 @@
+<script setup lang="ts">
+import { TresCanvas } from '@tresjs/core'
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <TresCanvas shadows window-size>
+
+    </TresCanvas>
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
 }
 </style>

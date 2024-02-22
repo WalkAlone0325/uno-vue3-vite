@@ -1,11 +1,14 @@
 <script setup lang="ts">
-
+defineProps<{
+  type: string
+  label: string
+}>()
 const val = defineModel()
-console.log(val)
+
 </script>
 
 <template>
-  <el-form-item label="1111">
-    <el-input v-model="val"></el-input>
+  <el-form-item :label="label">
+    <el-input :type="type" v-model="val"></el-input>
   </el-form-item>
 </template>

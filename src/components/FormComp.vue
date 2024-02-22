@@ -1,33 +1,19 @@
 <template>
-  <el-form :inline="true" :model="formInline" class="demo-form-inline">
-    <slot />
-    <el-form-item>
-      <el-button type="primary" @click="onSubmit">Query</el-button>
-    </el-form-item>
-  </el-form>
+  <div>
+    <el-form :inline="true" :model="form" class="demo-form-inline">
+      <slot />
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">Query</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, useSlots } from 'vue'
+import { ref } from 'vue'
 
-const slots = useSlots()
-const formInline = ref({})
+const form = ref({})
 
 const onSubmit = () => {
-  const vals = slots.default!().map(slot => slot.props!.modelValue)
-  console.log(vals)
-
-
-  console.log(slots.default!(), 'submit!')
 }
 </script>
-
-<style>
-.demo-form-inline .el-input {
-  --el-input-width: 220px;
-}
-
-.demo-form-inline .el-select {
-  --el-select-width: 220px;
-}
-</style>
